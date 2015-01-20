@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -37,8 +38,16 @@ public class MainActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        TextView t = (TextView) findViewById(R.id.txtMessage);
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            t.setText("Welcome to SIT!");
+            Log.d("Setting Menu", "Setting Button Pressed");
+            return true;
+        }
+        else if (id == R.id.action_about) {
+            t.setText("I am a student from SIT.");
+            Log.d("Setting Menu", "About Button Pressed");
             return true;
         }
 
